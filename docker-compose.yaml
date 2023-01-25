@@ -20,7 +20,9 @@ services:
     ports:
       - 8000:8000
     command: python src/main.py
-    build: .
+    build:
+      context: src
+      dockerfile: dockerfile
     depends_on:
       - mongodb
     volumes:
