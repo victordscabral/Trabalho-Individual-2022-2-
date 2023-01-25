@@ -12,3 +12,19 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: lappis
       MONGO_INITDB_ROOT_PASSWORD: lappis
+
+  app:
+    container_name: app-container
+    image: python:latest
+    restart: always
+    ports:
+      - 8000:8000
+    command: python src/main.py
+    build: .
+    depends_on:
+      - mongodb
+    volumes:
+      - .:/app
+
+volumes: 
+  mongo-volume:
