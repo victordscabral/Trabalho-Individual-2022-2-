@@ -52,3 +52,5 @@ services:
       - postgresql
     volumes:
       - .:/metabase
+
+# Link para a publicação do poetry: 
